@@ -1,13 +1,14 @@
 import { useState } from "react";
+import React from "react";
 
-export default function ChildOne({ setUser, handleClick }) {
+const ChildOne = React.memo(({ handleName, name }) => {
+  console.log("Child Rendered");
   return (
     <h1>
-      Child One
-      <input
-        type="text"
-        onChange={(event) => handleClick(event.target.value)}
-      ></input>
+      Child
+      <input type="text" onChange={handleName}></input>
     </h1>
   );
-}
+});
+
+export default ChildOne;
